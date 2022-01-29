@@ -2,8 +2,8 @@ import Config
 
 # Configure your database
 config :edwardzhou, Edwardzhou.Repo,
-  username: "postgres",
-  password: "postgres",
+  username: "edward",
+  password: System.get_env("edwardzhou_dev_db_password"),
   hostname: "localhost",
   database: "edwardzhou_dev",
   show_sensitive_data_on_connection_error: true,
@@ -25,7 +25,15 @@ config :edwardzhou, EdwardzhouWeb.Endpoint,
   secret_key_base: "qbhkA23W/OoRe+MlLZUTx+InCwF8QuITmyYJF9H4bcr8g0uIs78ttiDXUeIAC5Os",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    npx: [
+      "tailwindcss",
+      "--input=css/app.css",
+      "--output=../priv/static/assets/app.css",
+      "--postcss",
+      "--watch",
+      cd: Path.expand("../assets", __DIR__)
+    ]
   ]
 
 # ## SSL Support
