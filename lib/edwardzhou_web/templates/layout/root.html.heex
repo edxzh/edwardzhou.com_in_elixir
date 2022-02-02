@@ -11,18 +11,34 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav>
-          <ul>
-            <li><a href="https://hexdocs.pm/phoenix/overview.html">Get Started</a></li>
-            <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
-            <% end %>
-          </ul>
+      <section>
+        <nav class="container flex justify-between px-4 py-8 mx-auto bg-white">
+          <div class="hidden space-x-8 lg:flex">
+            <ul class="flex">
+              <li class="w-32 h-10 mr-6 border-2 border-solid"><a class="flex items-center justify-center h-full" href="">Home</a></li>
+              <li class="w-32 h-10 mr-6 border-2 border-solid"><a class="flex items-center justify-center h-full" href="">About Us</a></li>
+              <li class="w-32 h-10 mr-6 border-2 border-solid"><a class="flex items-center justify-center h-full" href="">Blogs</a></li>
+              <li class="w-32 h-10 mr-6 border-2 border-solid"><a class="flex items-center justify-center h-full" href="">Our Team</a></li>
+              <li class="w-32 h-10 mr-6 border-2 border-solid"><a class="flex items-center justify-center h-full" href="">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="flex lg:hidden">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                    />
+            </svg>
+          </div>
         </nav>
-        <a href="https://phoenixframework.org/" class="phx-logo">
-          <img src={Routes.static_path(@conn, "/images/phoenix.png")} alt="Phoenix Framework Logo"/>
-        </a>
       </section>
     </header>
     <%= @inner_content %>
