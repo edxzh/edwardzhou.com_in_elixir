@@ -1,7 +1,7 @@
 defmodule EdwardzhouWeb.PageController do
   use EdwardzhouWeb, :controller
 
-  def index(conn, _params) do
-    render(conn, "index.html")
+  def home(conn, _params) do
+    render(conn, "home.html")
   end
 end
