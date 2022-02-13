@@ -1,4 +1,4 @@
-<section class="relative z-0 w-11/12 mx-auto border lg:w-2/3 image border-slate-700">
+<section class="relative w-11/12 mx-auto border lg:w-2/3 image border-slate-700">
   <span class="feature_blog_tag">FEATURED POST</span>
   <%= img_tag(Routes.static_path(@conn, "/images/feature_blog.png")) %>
   <section class="py-8 pl-8 pr-20">
@@ -13,3 +13,17 @@
     </div>
   </section>
 </section>
+
+<div class="mx-auto mt-24 py-14 border-y border-slate-700 grid grid-cols-2">
+  <h1 class="w-full font-serif text-4xl text-center">Never Miss a New Post.</h1>
+  <div class="w-full grid grid-cols-2 gap-1">
+    <div class="grid grid-rows-2 gap-1">
+      <label class="block text-slate-700" for="subscribe_email_input">Enter your email *</label>
+      <input class="w-72 text-slate-700 px-0.5 border-0 border-b focus:ring-0 focus:border-purple-500" type="email" id="subscribe_email_input" />
+    </div>
+    <div class="grid grid-rows-2">
+      <div></div>
+      <button class="h-10 text-white bg-purple-500 w-28">Subscribe</button>
+    </div>
+  </div>
+</div>
