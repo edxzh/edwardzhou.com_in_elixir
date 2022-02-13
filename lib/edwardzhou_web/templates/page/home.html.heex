@@ -1,26 +1,29 @@
-<section class="relative w-11/12 mx-auto border lg:w-1/2 image border-slate-700">
+<!-- featured blog section -->
+<section class="relative w-11/12 mx-auto border lg:w-1/2 image border-slate-700 dark:ring-1 dark:ring-white/10 dark:ring-inset">
   <span class="feature_blog_tag">FEATURED POST</span>
   <%= img_tag(Routes.static_path(@conn, "/images/feature_blog.png")) %>
   <section class="py-8 pl-8 pr-20">
-    <div class="text-sm text-slate-700">
+    <div class="text-sm text-slate-700 dark:text-slate-400">
       <span class="mr-1">Nov 9, 2021</span>
-      <span class="mr-1 relative bottom-0.5 inline-block w-0.5 h-0.5 rounded-full bg-slate-700"></span>
+      <span class="mr-1 relative bottom-0.5 inline-block w-0.5 h-0.5 rounded-full bg-slate-400 dark:bg-slate-400"></span>
       <span>2 min</span>
     </div>
     <div class="hover:text-purple-500">
       <h1 class="mt-6 text-3xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
-      <p class="mt-4 text-slate-700 hover:text-purple-500">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+      <p class="mt-4">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
     </div>
   </section>
 </section>
 
-<div class="w-11/12 py-2 mx-auto mb-24 lg:mt-24 lg:py-14 border-y border-slate-700 lg:grid lg:grid-cols-2">
+<!-- Subscribe email section -->
+<div class="w-11/12 py-2 mx-auto mb-24 lg:mt-24 lg:py-14 border-y border-slate-700 dark:border-slate-100 lg:grid lg:grid-cols-2">
   <h1 class="w-full lg:leading-[5rem] h-20 font-serif text-3xl lg:text-4xl text-center">Never Miss a New Post.</h1>
   <div class="w-full ml-2">
-    <label class="block text-slate-500" for="subscribe_email_input">Enter your email *</label>
+    <label class="block text-slate-400" for="subscribe_email_input">Enter your email *</label>
     <div>
-      <input class="w-72 text-slate-700 px-0.5 border-0 border-b focus:ring-0 focus:border-purple-500 hover:border-purple-500" type="email" id="subscribe_email_input" />
-      <button class="h-10 mt-2 text-white bg-purple-500 lg:ml-8 w-28 transition delay-150 ease-in-out hover:-translate-y-1 hover:scale-110 duration-300 lg:mt-0">Subscribe</button>
+      <input class="dark:bg-slate-900 w-72 px-0.5 border-0 border-b peer focus:ring-0 focus:border-purple-500 hover:border-purple-500 focus:border-b-2 invalid:border-red-500 invalid:border-b-2" type="email" id="subscribe_email_input" />
+      <p class="absolute invisible text-pink-600 peer-invalid:visible">Please provide a valid email address.</p>
+      <button class="h-10 mt-8 lg:ml-8 w-28 lg:mt-0 button">Subscribe</button>
     </div>
   </div>
 </div>
