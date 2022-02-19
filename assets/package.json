@@ -6,9 +6,18 @@
     "alpinejs": "^3.8.1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.0.0",
     "@tailwindcss/forms": "^0.4.0",
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.17"
+    "chokidar": "^3.5.3",
+    "esbuild": "^0.14.23",
+    "esbuild-sass-plugin": "^2.2.3",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "phoenix_live_view": "file:../deps/phoenix_live_view",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.23"
   }
 }
