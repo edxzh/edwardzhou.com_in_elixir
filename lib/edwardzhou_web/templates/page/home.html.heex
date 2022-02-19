@@ -10,7 +10,7 @@
     </div>
     <div class="hover:text-purple-500">
       <h1 class="mt-6 text-3xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
-      <p class="mt-4">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+      <p class="mt-4 text-slate-700">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
     </div>
   </section>
 </section>
@@ -31,7 +31,7 @@
 <!-- blogs and about me section -->
 <section class="w-11/12 py-8 mx-auto border-b lg:mb-20 border-slate-700 dark:border-slate-100 lg:grid lg:grid-cols-3">
   <!-- blogs -->
-  <section class="border-r lg:col-span-2 border-slate-700">
+  <section class="lg:border-r lg:col-span-2 border-slate-700">
     <div class="mx-auto lg:w-1/2">
       <p class="lg:tracking-[.5em] text-2xl mx-auto lg:mb-14 text-center lg:text-left">TRAIN OF THOUGHT</p>
       <section class="p-4 border-0 lg:mb-10 lg:border border-slate-700">
@@ -42,7 +42,7 @@
         </div>
         <div class="hover:text-purple-500">
           <h1 class="mt-6 text-2xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
-          <p class="mt-4">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+          <p class="mt-4 text-slate-700">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
         </div>
       </section>
 
@@ -54,7 +54,7 @@
         </div>
         <div class="hover:text-purple-500">
           <h1 class="mt-6 text-2xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
-          <p class="mt-4">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
+          <p class="mt-4 text-slate-700">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
         </div>
       </section>
     </div>
@@ -62,12 +62,15 @@
 
   <!-- about me -->
   <section class="lg:col-span-1">
-    <div class="mx-auto lg:w-1/2">
-      <p class="lg:tracking-[.5em] text-2xl mx-auto mb-14">ABOUT ME</p>
-      <section class="py-10 border-b border-slate-700">
+    <div class="px-2 mx-auto lg:px-0 lg:w-3/5">
+      <p class="lg:tracking-[.5em] text-2xl mx-auto lg:mb-14 text-center lg:text-left">ABOUT ME</p>
+      <section class="pb-10 lg:border-b border-slate-700 lg:mb-14">
         <%= img_tag(Routes.static_path(@conn, "/images/avatar.png"), class: "h-44 rounded-full mb-8") %>
-        <p class="leading-normal tracking-wide lg:mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        <%= link("Read More >", to: "/world", class: "leading-normal tracking-wide mb-12") %>
+        <p class="leading-normal tracking-wide lg:px-0 lg:mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <%= link("Read More >", to: "/world", class: "leading-normal tracking-wide mb-14") %>
+      </section>
+      <section>
+    
       </section>
     </div>
   </section>
