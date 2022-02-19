@@ -4,7 +4,7 @@
 
 @layer components {
   .feature_blog_tag {
-    @apply absolute -left-[1px] inline-block tracking-[.25em] text-xl leading-[3.2rem] text-center border h-14 lg:w-2/5 -top-7 border-slate-700 bg-white dark:bg-slate-100 dark:text-slate-700;
+    @apply absolute -left-[1px] px-2 inline-block lg:tracking-[.25em] text-xl leading-[3.2rem] text-center border h-14 lg:w-2/5 -top-7 border-slate-700 bg-white dark:bg-slate-100 dark:text-slate-700;
   }
 
   .button {

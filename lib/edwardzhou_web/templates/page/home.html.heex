@@ -16,8 +16,8 @@
 </section>
 
 <!-- Subscribe email section -->
-<div class="w-11/12 py-2 mx-auto mb-20 lg:mt-24 lg:py-14 border-y border-slate-700 dark:border-slate-100 lg:grid lg:grid-cols-2">
-  <h1 class="w-full h-20 p-4 font-serif text-3xl text-center lg:text-4xl">Never Miss a New Post.</h1>
+<section class="w-11/12 py-2 mx-auto lg:mb-10 lg:mt-24 lg:py-14 border-y border-slate-700 dark:border-slate-100 lg:grid lg:grid-cols-3">
+  <h1 class="p-4 mx-auto font-serif text-3xl lg:w-1/2 lg:col-span-2 lg:text-4xl">Never Miss a New Post.</h1>
   <div class="w-full ml-2">
     <label class="block text-slate-400" for="subscribe_email_input">Enter your email *</label>
     <div>
@@ -26,14 +26,15 @@
       <button class="h-10 mt-8 lg:ml-8 w-28 lg:mt-0 button">Subscribe</button>
     </div>
   </div>
-</div>
+</section>
 
 <!-- blogs and about me section -->
-<div class="w-11/12 mx-auto mb-20 border-b border-slate-700 dark:border-slate-100 lg:grid lg:grid-cols-3">
-  <div class="lg:col-span-2">
-    <div class="w-1/2 mx-auto">
-      <p class="tracking-[.5em] text-xl mx-auto mb-14">TRAIN OF THOUGHT</p>
-      <div class="p-4 mb-10 border-0 lg:border border-slate-700">
+<section class="w-11/12 py-8 mx-auto border-b lg:mb-20 border-slate-700 dark:border-slate-100 lg:grid lg:grid-cols-3">
+  <!-- blogs -->
+  <section class="border-r lg:col-span-2 border-slate-700">
+    <div class="mx-auto lg:w-1/2">
+      <p class="lg:tracking-[.5em] text-2xl mx-auto lg:mb-14 text-center lg:text-left">TRAIN OF THOUGHT</p>
+      <section class="p-4 border-0 lg:mb-10 lg:border border-slate-700">
         <div class="text-sm text-slate-700 dark:text-slate-400">
           <span class="mr-1">Nov 9, 2021</span>
           <span class="mr-1 relative bottom-0.5 inline-block w-0.5 h-0.5 rounded-full bg-slate-400 dark:bg-slate-400"></span>
@@ -43,9 +44,9 @@
           <h1 class="mt-6 text-2xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
           <p class="mt-4">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
         </div>
-      </div>
+      </section>
 
-      <div class="p-4 mb-10 border-0 lg:border border-slate-700">
+      <section class="p-4 mb-10 border-0 lg:border border-slate-700">
         <div class="text-sm text-slate-700 dark:text-slate-400">
           <span class="mr-1">Nov 9, 2021</span>
           <span class="mr-1 relative bottom-0.5 inline-block w-0.5 h-0.5 rounded-full bg-slate-400 dark:bg-slate-400"></span>
@@ -55,8 +56,19 @@
           <h1 class="mt-6 text-2xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
           <p class="mt-4">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
         </div>
-      </div>
+      </section>
     </div>
-  </div>
-  <div class="lg:col-span-1">02</div>
-</div>
+  </section>
+
+  <!-- about me -->
+  <section class="lg:col-span-1">
+    <div class="mx-auto lg:w-1/2">
+      <p class="lg:tracking-[.5em] text-2xl mx-auto mb-14">ABOUT ME</p>
+      <section class="py-10 border-b border-slate-700">
+        <%= img_tag(Routes.static_path(@conn, "/images/avatar.png"), class: "h-44 rounded-full mb-8") %>
+        <p class="leading-normal tracking-wide lg:mb-10">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <%= link("Read More >", to: "/world", class: "leading-normal tracking-wide mb-12") %>
+      </section>
+    </div>
+  </section>
+</section>
