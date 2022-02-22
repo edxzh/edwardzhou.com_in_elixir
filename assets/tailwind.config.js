@@ -1,5 +1,9 @@
 module.exports = {
-  content: ["./js/**/*.js", "../lib/*_web/**/*.*ex"],
+  content: [
+    "./js/**/*.js",
+    "../lib/*_web/**/*.*ex",
+    "./node_modules/flowbite/**/*.js"
+  ],
   theme: {
     extend: {
       animation: {
@@ -8,5 +12,7 @@ module.exports = {
     },
   },
   variants: [],
-  plugins: [require("@tailwindcss/forms")],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 };
