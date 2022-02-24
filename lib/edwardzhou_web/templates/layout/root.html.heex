@@ -10,7 +10,7 @@
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body class="dark:bg-slate-900 dark:text-slate-400">
-    <%= render EdwardzhouWeb.SharedView, "_header.html" %>
+    <%= render EdwardzhouWeb.SharedView, "_header.html", page: @page %>
     <%= @inner_content %>
     <%= render EdwardzhouWeb.SharedView, "_footer.html" %>
   </body>
