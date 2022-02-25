@@ -1,16 +1,67 @@
-<section class="relative w-11/12 mx-auto border lg:w-1/2 image border-slate-700 dark:ring-1 dark:ring-white/10 dark:ring-inset">
+<section class="w-11/12 mx-auto border lg:w-1/2 border-slate-700 dark:ring-1 dark:ring-white/10 dark:ring-inset">
   <%= img_tag(Routes.static_path(@conn, "/images/feature_blog.png")) %>
   <section class="py-8 pl-8 pr-20">
-    <div class="text-sm text-slate-700 dark:text-slate-400">
-      <span class="mr-1">Nov 9, 2021</span>
-      <span class="mr-1 relative bottom-0.5 inline-block w-0.5 h-0.5 rounded-full bg-slate-400 dark:bg-slate-400"></span>
-      <span>2 min</span>
-    </div>
-    <div class="hover:text-purple-500">
-      <h1 class="mt-6 text-3xl hover:text-purple-500">Everything about books: what I'm reading during X-mas leave</h1>
-      <p class="mt-4 text-slate-700 dark:text-slate-500">Create a blog post subtitle that summarizes your post in a few short, punchy sentences and entices your audience to continue reading....</p>
-    </div>
+    <h1 class="mt-6 text-3xl text-black dark:text-white">Hi! Nice to meet you.</h1>
+    <p class="mt-8 leading-normal tracking-wide text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">I'm a full-stack programmer with 8+ years software developing experience, I'm passionate about Web Development, Data, BlockChain, Web3.</p>
+    <p class="mt-8 leading-normal tracking-wide text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">Skills:</p>
+    <ul class="mt-4 ml-4 list-disc">
+      <li>Ruby && Elixir</li>
+      <li>AWS</li>
+      <li>K8S</li>
+      <li>CI/CD</li>
+      <li>Microservice Architecture</li>
+      <li>Agile and Lean</li>
+    </ul>
   </section>
 </section>
 
+<section class="w-11/12 mx-auto lg:w-1/2 dark:ring-1 dark:ring-white/10 dark:ring-inset">
+  <p class="mt-8 text-2xl leading-normal tracking-wide text-center text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">Licenses & certifications:</p>
+  <ul class="flex justify-around mt-6">
+    <li class="w-48">
+      <%=link to: URI.parse("https://www.credly.com/badges/9baf8d7c-86de-49ee-9cfd-7376ac8d2c65/public_url"), target: "_blank" do %>
+        <%= img_tag(Routes.static_path(@conn, "/images/aws-certified-data-analytics-specialty.png")) %>
+      <% end %>
+    </li>
+    <li class="w-48">
+      <%=link to: URI.parse("https://www.credly.com/badges/80c5d230-dc22-4d12-9640-020117653d8f/public_url"), target: "_blank" do %>
+        <%= img_tag(Routes.static_path(@conn, "/images/ckad-certified-kubernetes-application-developer.png")) %>
+      <% end %>
+    </li>
+    <li class="w-48">
+      <%=link to: URI.parse("https://www.credly.com/badges/9b169808-6a5a-4fe1-81c2-11566dbc8d3c/public_url"), target: "_blank" do %>
+        <%= img_tag(Routes.static_path(@conn, "/images/aws-certified-solutions-architect-associate.png")) %>
+      <% end %>
+    </li>
+  </ul>
+</section>
 
+<section class="w-1/2 mx-auto mt-24 mb-16">
+  <ol class="relative border-l border-gray-200 dark:border-gray-700">
+    <li class="mb-10 ml-4">
+      <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">July 2013</time>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Graduate from CUIT(ChengDu China)</h3>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Studied in <%= link("CUIT", to: URI.parse("https://english.cuit.edu.cn/index.jsp"), class: "underline underline-offset-2 hover:text-purple-500") %> for 4 years, bachelor of science in computer science and technology.</p>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Started my professional programmer career right after graduation by joining a chinese e-commerce company(zhe800) as a Ruby developer, focus on backend development.</p>
+    </li>
+    <li class="mb-10 ml-4">
+      <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">February 2015</time>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">ThoughtWorks China</h3>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">As a consultant works with different clients, take care of both feature delivery and training, the clients includes but not limited to Lenovo(3 months), https://realestate.com.au(3 years) and Bulgari(6 months).</p>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Tech Stack: Ruby on Rails, AWS, Docker, Microservice, Agile</p>
+    </li>
+    <li class="mb-10 ml-4">
+      <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">June 2018</time>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">MYOB Melbourne</h3>
+      <p class="text-base font-normal text-gray-500 dark:text-gray-400">As a senior developer works across multiple products, help deliver https://app.myob.com, build data platform(snowflake)</p>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Tech Stack: React, Node, OpenResty, AWS, K8S, Python</p>
+    </li>
+    <li class="ml-4">
+      <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">to be continue...</time>
+    </li>
+  </ol>
+</section>
