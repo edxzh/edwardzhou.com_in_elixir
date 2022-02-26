@@ -3,7 +3,6 @@ import Config
 # Configure your database
 config :edwardzhou, Edwardzhou.Repo,
   username: "edward",
-  password: System.get_env("edwardzhou_dev_db_password"),
   hostname: "localhost",
   database: "edwardzhou_dev",
   show_sensitive_data_on_connection_error: true,

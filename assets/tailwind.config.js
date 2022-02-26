@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: 'media',
   content: [
     "./js/**/*.js",
     "../lib/*_web/**/*.*ex",

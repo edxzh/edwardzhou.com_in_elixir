@@ -1,10 +1,11 @@
 <section class="w-11/12 mx-auto border lg:w-1/2 border-slate-700 dark:ring-1 dark:ring-white/10 dark:ring-inset">
   <%= img_tag(Routes.static_path(@conn, "/images/feature_blog.png")) %>
-  <section class="py-8 pl-8 pr-20">
+  <section class="px-4 py-8 lg:pl-8 lg:pr-20">
     <h1 class="mt-6 text-3xl text-black dark:text-white">Hi! Nice to meet you.</h1>
     <p class="mt-8 leading-normal tracking-wide text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">I'm a full-stack programmer with 8+ years software developing experience, I'm passionate about Web Development, Data, BlockChain, Web3.</p>
+    <p class="mt-8 leading-normal tracking-wide text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">While I'm not programming, you can find me gaming, meditating, or laughing in front of YouTube videos, I'm interested in everything that's new to me.</p>
     <p class="mt-8 leading-normal tracking-wide text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">Skills:</p>
-    <ul class="mt-4 ml-4 list-disc">
+    <ul class="mt-4 ml-4 list-disc dark:text-white">
       <li>Ruby && Elixir</li>
       <li>AWS</li>
       <li>K8S</li>
@@ -15,10 +16,9 @@
   </section>
 </section>
 
-<section class="w-11/12 mx-auto lg:w-1/2 dark:ring-1 dark:ring-white/10 dark:ring-inset">
-  <p class="mt-8 text-2xl leading-normal tracking-wide text-center text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">Licenses & certifications:</p>
-  <ul class="flex justify-around mt-6">
-    <li class="w-48">
+<section class="w-11/12 mx-auto lg:w-2/3 dark:ring-1 dark:ring-white/10 dark:ring-inset">
+  <p class="mt-10 text-2xl leading-normal tracking-wide text-center text-black dark:text-white selection:bg-purple-300 selection:text-amber-600">Licenses & certifications:</p>
+  <ul class="flex justify-around mt-6"> <li class="w-48">
       <%=link to: URI.parse("https://www.credly.com/badges/9baf8d7c-86de-49ee-9cfd-7376ac8d2c65/public_url"), target: "_blank" do %>
         <%= img_tag(Routes.static_path(@conn, "/images/aws-certified-data-analytics-specialty.png")) %>
       <% end %>
@@ -36,14 +36,20 @@
   </ul>
 </section>
 
-<section class="w-1/2 mx-auto mt-24 mb-16">
+<section class="w-11/12 mx-auto mt-24 mb-16 lg:w-1/2">
   <ol class="relative border-l border-gray-200 dark:border-gray-700">
     <li class="mb-10 ml-4">
       <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">September 2009</time>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Study in University(CUIT)</h3>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Start university life in <%= link("CUIT", to: URI.parse("https://english.cuit.edu.cn/index.jsp"), class: "underline underline-offset-2 hover:text-purple-500") %>, major in computer science and technology.</p>
+    </li>
+    <li class="mb-10 ml-4">
+      <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">July 2013</time>
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Graduate from CUIT(ChengDu China)</h3>
-      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Studied in <%= link("CUIT", to: URI.parse("https://english.cuit.edu.cn/index.jsp"), class: "underline underline-offset-2 hover:text-purple-500") %> for 4 years, bachelor of science in computer science and technology.</p>
-      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Started my professional programmer career right after graduation by joining a chinese e-commerce company(zhe800) as a Ruby developer, focus on backend development.</p>
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Graduate and Start Career</h3>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Graduate with bachelor of science in computer science and technology.</p>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Started my professional programmer career at the same time by joining a chinese e-commerce company(zhe800.com) as a Ruby developer, focus on backend development.</p>
     </li>
     <li class="mb-10 ml-4">
       <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
@@ -56,7 +62,7 @@
       <div class="absolute w-3 h-3 bg-gray-200 rounded-full -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">June 2018</time>
       <h3 class="text-lg font-semibold text-gray-900 dark:text-white">MYOB Melbourne</h3>
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">As a senior developer works across multiple products, help deliver https://app.myob.com, build data platform(snowflake)</p>
+      <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Move to Melbourne, work as a senior developer in MYOB across multiple products, help deliver https://app.myob.com, build data platform(snowflake).</p>
       <p class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">Tech Stack: React, Node, OpenResty, AWS, K8S, Python</p>
     </li>
     <li class="ml-4">
