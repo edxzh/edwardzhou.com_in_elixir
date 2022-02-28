@@ -7,7 +7,7 @@ defmodule Edwardzhou.Blog.Tag do
     field :publish_status, Ecto.Enum, values: [:published, :drafted, :deleted]
     field :uuid, Ecto.UUID
 
-    many_to_many :posts, Blog.Post, join_through: "posts_tags"
+    many_to_many :posts, Edwardzhou.Blog.Post, join_through: "posts_tags"
 
     timestamps()
   end

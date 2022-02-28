@@ -12,7 +12,7 @@ defmodule Edwardzhou.Blog.Post do
     field :views, :integer, default: 0
     field :weight, :integer
 
-    many_to_many :tags, Blog.Tag, join_through: "posts_tags"
+    many_to_many :tags, Edwardzhou.Blog.Tag, join_through: "posts_tags"
 
     timestamps()
   end
