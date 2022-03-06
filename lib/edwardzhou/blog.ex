@@ -18,7 +18,8 @@ defmodule Edwardzhou.Blog do
 
   """
   def list_posts do
-    raise "TODO"
+    Post
+    |> Repo.all()
   end
 
   @doc """
@@ -92,6 +93,6 @@ defmodule Edwardzhou.Blog do
 
   """
   def change_post(%Post{} = post, _attrs \\ %{}) do
-    raise "TODO"
+    Post.changeset(post, {})
   end
 end

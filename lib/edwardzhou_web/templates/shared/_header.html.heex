@@ -6,7 +6,7 @@
       <ul class="flex mx-auto font-normal border-x-1 dark:border-slate-100 divide-x divide-slate-700 border-x border-slate-700 lg:shrink-0 dark:divide-slate-100">
         <li class={"h-12 w-44 hover:text-purple-500 #{@page == :home && 'text-purple-500'}"}><%= link("Home", to: "/", class: "flex items-center justify-center h-full") %></li>
         <li class={"h-12 w-44 hover:text-purple-500 #{@page == :about && 'text-purple-500'}"}><%= link("About", to: "/about", class: "flex items-center justify-center h-full") %></li>
-        <li class="h-12 w-44 hover:text-purple-500"><a class="flex items-center justify-center h-full" href="">My Blog</a></li>
+        <li class={"h-12 w-44 hover:text-purple-500 #{@page == :posts && 'text-purple-500'}"}><%= link("My Blog", to: "/posts", class: "flex items-center justify-center h-full") %></li>
         <li class="h-12 w-44 hover:text-purple-500"><a class="flex items-center justify-center h-full" href="">Our Team</a></li>
         <li class="h-12 w-44 hover:text-purple-500"><a class="flex items-center justify-center h-full" href="">Contact Us</a></li>
       </ul>
