@@ -1,0 +1,48 @@
+<h1>Show Post</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </li>
+
+  <li>
+    <strong>Content:</strong>
+    <%= @post.content %>
+  </li>
+
+  <li>
+    <strong>Views:</strong>
+    <%= @post.views %>
+  </li>
+
+  <li>
+    <strong>Weight:</strong>
+    <%= @post.weight %>
+  </li>
+
+  <li>
+    <strong>Seo keyword:</strong>
+    <%= @post.seo_keyword %>
+  </li>
+
+  <li>
+    <strong>Url name:</strong>
+    <%= @post.url_name %>
+  </li>
+
+  <li>
+    <strong>Publish status:</strong>
+    <%= @post.publish_status %>
+  </li>
+
+  <li>
+    <strong>Uuid:</strong>
+    <%= @post.uuid %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.post_path(@conn, :edit, @post) %></span> |
+<span><%= link "Back", to: Routes.post_path(@conn, :index) %></span>

@@ -5,7 +5,6 @@ defmodule EdwardzhouWeb.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {EdwardzhouWeb.LayoutView, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
@@ -14,12 +13,26 @@ defmodule EdwardzhouWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :root_layout do
+    plug :put_root_layout, {EdwardzhouWeb.LayoutView, :root}
+  end
+
+  pipeline :admin_layout do
+    plug :put_layout, { EdwardzhouWeb.LayoutView, :admin }
+  end
+
   scope "/", EdwardzhouWeb do
-    pipe_through :browser
+    pipe_through [:browser, :root_layout]
 
     resources "/posts", PostController
     get "/", PageController, :home
     get "/about", PageController, :about
+  end
+
+  scope "/admin", EdwardzhouWeb.Admin, as: :admin do
+    pipe_through [:browser, :admin_layout]
+
+    resources "/posts", PostController
   end
 
   # Other scopes may use custom stacks.

@@ -93,6 +93,6 @@ defmodule Edwardzhou.Blog do
 
   """
   def change_post(%Post{} = post, _attrs \\ %{}) do
-    Post.changeset(post, {})
+    Post.changeset(post, %{})
   end
 end
