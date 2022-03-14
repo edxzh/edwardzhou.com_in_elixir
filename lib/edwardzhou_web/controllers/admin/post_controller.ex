@@ -4,7 +4,6 @@ defmodule EdwardzhouWeb.Admin.PostController do
   alias Edwardzhou.Blog
   alias Edwardzhou.Blog.Post
 
-
   def index(conn, _params) do
     posts = Blog.list_posts()
     render(conn, "index.html", posts: posts, page: :home)

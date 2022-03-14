@@ -1,19 +1,17 @@
 module.exports = {
-  darkMode: 'media',
+  darkMode: 'class',
   content: [
-    "./js/**/*.js",
-    "../lib/*_web/**/*.*ex",
-    "./node_modules/flowbite/**/*.js"
+    './js/**/*.js',
+    '../lib/*_web/**/*.*ex',
+    './node_modules/flowbite/**/*.js',
   ],
   theme: {
     extend: {
       animation: {
-        'spin-once': 'spin 1s linear'
-      }
+        'spin-once': 'spin 1s linear',
+      },
     },
   },
   variants: [],
-  plugins: [
-    require('flowbite/plugin')
-  ],
+  plugins: [require('flowbite/plugin')],
 };

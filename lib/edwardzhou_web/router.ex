@@ -18,7 +18,7 @@ defmodule EdwardzhouWeb.Router do
   end
 
   pipeline :admin_layout do
-    plug :put_layout, { EdwardzhouWeb.LayoutView, :admin }
+    plug :put_layout, {EdwardzhouWeb.LayoutView, :admin}
   end
 
   scope "/", EdwardzhouWeb do
@@ -32,6 +32,7 @@ defmodule EdwardzhouWeb.Router do
   scope "/admin", EdwardzhouWeb.Admin, as: :admin do
     pipe_through [:browser, :admin_layout]
 
+    get "/", DashboardController, :index
     resources "/posts", PostController
   end
 

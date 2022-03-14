@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html :class="{ 'dark': dark }" x-data="data()" lang="en">
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -13,5 +13,31 @@
     <%= render EdwardzhouWeb.SharedView, "_header.html", page: @page %>
     <%= @inner_content %>
     <%= render EdwardzhouWeb.SharedView, "_footer.html" %>
+    <script>
+      function data() {
+        function getThemeFromLocalStorage() {
+          if (window.localStorage.getItem('dark')) {
+            return JSON.parse(window.localStorage.getItem('dark'))
+          }
+
+          return (
+            !!window.matchMedia &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches
+          )
+        }
+
+        function setThemeToLocalStorage(value) {
+          window.localStorage.setItem('dark', value)
+        }
+
+        return {
+          dark: getThemeFromLocalStorage(),
+          toggleTheme() {
+            this.dark = !this.dark
+            setThemeToLocalStorage(this.dark)
+          }
+        }
+      }
+    </script>
   </body>
 </html>
