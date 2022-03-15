@@ -7,6 +7,7 @@ defmodule Edwardzhou.Blog do
   alias Edwardzhou.Repo
 
   alias Edwardzhou.Blog.Post
+  alias Edwardzhou.Blog.Tag
 
   @doc """
   Returns the list of posts.
@@ -20,6 +21,10 @@ defmodule Edwardzhou.Blog do
   def list_posts do
     Post
     |> Repo.all()
+  end
+
+  def count_posts do
+    Repo.aggregate(Post, :count, :id)
   end
 
   @doc """
@@ -94,5 +99,9 @@ defmodule Edwardzhou.Blog do
   """
   def change_post(%Post{} = post, _attrs \\ %{}) do
     Post.changeset(post, %{})
+  end
+
+  def count_tag do
+    Repo.aggregate(Tag, :count, :id)
   end
 end

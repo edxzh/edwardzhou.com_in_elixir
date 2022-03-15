@@ -10,8 +10,12 @@ module.exports = {
       animation: {
         'spin-once': 'spin 1s linear',
       },
+      boxShadow: {
+        xs: '0 0 0 1px rgba(0, 0, 0, 0.05)',
+        outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      },
     },
   },
   variants: [],
-  plugins: [require('flowbite/plugin')],
+  plugins: [require('flowbite/plugin'), require('@tailwindcss/typography')],
 };

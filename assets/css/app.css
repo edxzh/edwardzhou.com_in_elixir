@@ -7,6 +7,10 @@
     @apply absolute -left-[1px] px-2 inline-block lg:tracking-[.25em] text-xl leading-[3.2rem] text-center border h-14 lg:w-2/5 -top-7 border-slate-700 bg-white dark:bg-slate-100 dark:text-slate-700;
   }
 
+  .admin-card {
+    @apply flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800;
+  }
+
   .button {
     @apply bg-purple-500 text-white transition delay-150 ease-in-out hover:-translate-y-1 hover:scale-110 duration-300;
   }
