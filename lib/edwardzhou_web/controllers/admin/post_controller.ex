@@ -5,13 +5,13 @@ defmodule EdwardzhouWeb.Admin.PostController do
   alias Edwardzhou.Blog.Post
 
   def index(conn, _params) do
-    post_count = Blog.count_posts()
-    render(conn, "index.html", post_count: post_count, page: :home)
+    posts = Blog.list_posts()
+    render(conn, "index.html", posts: posts, page: :post)
   end
 
   def new(conn, _params) do
     changeset = Blog.change_post(%Post{})
-    render(conn, "new.html", changeset: changeset, page: :posts)
+    render(conn, "new.html", changeset: changeset, page: :post)
   end
 
   def create(conn, %{"post" => post_params}) do

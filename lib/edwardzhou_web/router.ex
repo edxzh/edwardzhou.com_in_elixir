@@ -34,6 +34,7 @@ defmodule EdwardzhouWeb.Router do
 
     get "/", DashboardController, :index
     resources "/posts", PostController
+    resources "/tags", TagController
   end
 
   # Other scopes may use custom stacks.

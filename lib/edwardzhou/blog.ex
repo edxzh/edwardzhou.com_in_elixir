@@ -38,7 +38,7 @@ defmodule Edwardzhou.Blog do
       %Post{}
 
   """
-  def get_post!(id), do: raise "TODO"
+  def get_post!(id), do: raise("TODO")
 
   @doc """
   Creates a post.
@@ -103,5 +103,10 @@ defmodule Edwardzhou.Blog do
 
   def count_tag do
     Repo.aggregate(Tag, :count, :id)
+  end
+
+  def list_tags do
+    Tag
+    |> Repo.all()
   end
 end
