@@ -24,7 +24,7 @@ defmodule EdwardzhouWeb.Router do
   scope "/", EdwardzhouWeb do
     pipe_through [:browser, :root_layout]
 
-    resources "/posts", PostController
+    resources "/posts", PostController, only: [:index, :show]
     get "/", PageController, :home
     get "/about", PageController, :about
   end
