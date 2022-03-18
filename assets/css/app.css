@@ -11,6 +11,10 @@
     @apply flex items-center p-4 bg-white rounded-lg shadow-xs dark:bg-gray-800;
   }
 
+  .admin-button {
+    @apply bg-purple-600 text-white transition-colors duration-150 active:bg-purple-600 hover:bg-purple-700 focus:outline-none text-center rounded;
+  }
+
   .button {
     @apply bg-purple-500 text-white transition delay-150 ease-in-out hover:-translate-y-1 hover:scale-110 duration-300;
   }
