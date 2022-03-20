@@ -53,7 +53,9 @@ defmodule Edwardzhou.Blog do
 
   """
   def create_post(attrs \\ %{}) do
-    raise "TODO"
+    %Post{}
+    |> Post.changeset(attrs)
+    |> Repo.insert()
   end
 
   @doc """

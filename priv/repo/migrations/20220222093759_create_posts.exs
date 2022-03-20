@@ -7,7 +7,7 @@ defmodule Edwardzhou.Repo.Migrations.CreatePosts do
       add :content, :text, null: false
       add :views, :integer, default: 0, comment: "the number of visits"
       add :weight, :integer, default: 0
-      add :seo_keyword, :string
+      add :seo_keywords, :string
       add :url_name, :string, null: false, comment: "in the url path"
       add :publish_status, :string, default: "drafted"
       add :uuid, :uuid

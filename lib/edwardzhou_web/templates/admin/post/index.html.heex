@@ -14,33 +14,26 @@
           </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-          <tr class="text-gray-700 dark:text-gray-400">
-            <td class="px-4 py-3">
-              <div class="flex items-center text-sm">
-                <div>
-                  <p class="font-semibold">What I read during X-Mas leave</p>
-                  <p class="text-xs text-gray-600 dark:text-gray-400">
-                    1000 viewed
-                  </p>
+          <%= for post <- @posts do %>
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <div>
+                    <p class="font-semibold"><%= post.title %></p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400"><%= post.views %> viewed</p>
+                  </div>
                 </div>
-              </div>
-            </td>
-            <td class="px-4 py-3 text-sm">
-              1
-            </td>
-            <td class="px-4 py-3 text-xs">
-              <span
-                class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-full dark:bg-green-700 dark:text-green-100">
-                Approved
-              </span>
-            </td>
-            <td class="px-4 py-3 text-sm">
-              Book
-            </td>
-            <td class="px-4 py-3 text-sm">
-              6/10/2020
-            </td>
-          </tr>
+              </td>
+              <td class="px-4 py-3 text-sm"><%= post.weight %></td>
+              <td class="px-4 py-3 text-xs">
+                <span class={"px-2 py-1 font-semibold leading-tight rounded-full #{publish_status_class(post.publish_status)}"}>
+                  <%= post.publish_status %>
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">Book</td>
+              <td class="px-4 py-3 text-sm"><%= post.inserted_at %></td>
+            </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
