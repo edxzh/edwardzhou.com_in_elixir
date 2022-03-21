@@ -23,6 +23,11 @@ defmodule Edwardzhou.Blog do
     |> Repo.all()
   end
 
+  def paginate_posts(params \\ []) do
+    Post
+    |> Repo.paginate(params)
+  end
+
   def count_posts do
     Repo.aggregate(Post, :count, :id)
   end

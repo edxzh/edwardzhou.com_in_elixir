@@ -11,6 +11,7 @@
             <th class="px-4 py-3">Status</th>
             <th class="px-4 py-3">Tags</th>
             <th class="px-4 py-3">Create Time</th>
+            <th class="py-3 pl-4">Action</th>
           </tr>
         </thead>
         <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
@@ -31,7 +32,11 @@
                 </span>
               </td>
               <td class="px-4 py-3 text-sm">Book</td>
-              <td class="px-4 py-3 text-sm"><%= post.inserted_at %></td>
+              <td class="px-4 py-3 text-sm"><%= display_time(post.inserted_at) %></td>
+              <td class="py-3 pl-4">
+                <%= link "Edit", to: Routes.admin_post_path(@conn, :edit, post), class: "admin-button bg-green-600 hover:bg-green-800 md:w-20 my-4 p-2 justify-self-end" %>
+                <%= link "Delete", to: Routes.admin_post_path(@conn, :delete, post), class: "admin-button bg-red-600 hover:bg-red-800 md:w-32 my-4 p-2 justify-self-end" %>
+              </td>
             </tr>
           <% end %>
         </tbody>
@@ -39,9 +44,7 @@
     </div>
     <div
       class="px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t grid dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
-      <span class="flex items-center col-span-3">
-        Showing 21-30 of 100
-      </span>
+      <span class="flex items-center col-span-3">Showing 21-30 of <%= @total_entries %></span>
       <span class="col-span-2"></span>
       <!-- Pagination -->
       <span class="flex mt-2 col-span-4 sm:mt-auto sm:justify-end">
@@ -57,40 +60,13 @@
                 </svg>
               </button>
             </li>
-            <li>
-              <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                1
-              </button>
-            </li>
-            <li>
-              <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                2
-              </button>
-            </li>
-            <li>
-              <button
-                class="px-3 py-1 text-white bg-purple-600 border border-r-0 border-purple-600 transition-colors duration-150 rounded-md focus:outline-none focus:shadow-outline-purple">
-                3
-              </button>
-            </li>
-            <li>
-              <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                4
-              </button>
-            </li>
-            <li>
-              <span class="px-3 py-1">...</span>
-            </li>
-            <li>
-              <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                8
-              </button>
-            </li>
-            <li>
-              <button class="px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple">
-                9
-              </button>
-            </li>
+            <%= for idx <-  Enum.to_list(1..@total_pages) do %>
+              <li>
+                <button class={"px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple #{@page_number == idx && "text-white bg-purple-600 border border-r-0 border-purple-600 transition-colors duration-150"}"}>
+                    <%= idx %>
+                </button>
+              </li>
+            <% end %>
             <li>
               <button class="px-3 py-1 rounded-r-lg rounded-md focus:outline-none focus:shadow-outline-purple"
                 aria-label="Next">
