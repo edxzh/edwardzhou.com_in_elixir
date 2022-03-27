@@ -1,0 +1,39 @@
+<table class="w-full whitespace-no-wrap">
+  <thead>
+    <tr
+        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+      <th class="px-4 py-3">Title</th>
+      <th class="px-4 py-3">Weight</th>
+      <th class="px-4 py-3">Status</th>
+      <th class="px-4 py-3">Tags</th>
+      <th class="px-4 py-3">Create Time</th>
+      <th class="py-3 pl-4">Action</th>
+    </tr>
+  </thead>
+  <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+    <%= for post <- @posts do %>
+      <tr class="text-gray-700 dark:text-gray-400">
+        <td class="px-4 py-3">
+          <div class="flex items-center text-sm">
+            <div>
+              <p class="font-semibold"><%= post.title %></p>
+              <p class="text-xs text-gray-600 dark:text-gray-400"><%= post.views %> viewed</p>
+            </div>
+          </div>
+        </td>
+        <td class="px-4 py-3 text-sm"><%= post.weight %></td>
+        <td class="px-4 py-3 text-xs">
+          <span class={"px-2 py-1 font-semibold leading-tight rounded-full #{publish_status_class(post.publish_status)}"}>
+            <%= post.publish_status %>
+          </span>
+        </td>
+        <td class="px-4 py-3 text-sm">Book</td>
+        <td class="px-4 py-3 text-sm"><%= display_time(post.inserted_at) %></td>
+        <td class="py-3 pl-4">
+          <%= link "Edit", to: Routes.admin_post_path(@conn, :edit, post), class: "admin-button bg-green-600 hover:bg-green-800 md:w-20 my-4 p-2 justify-self-end" %>
+          <%= link "Delete", to: Routes.admin_post_path(@conn, :delete, post), class: "admin-button bg-red-600 hover:bg-red-800 md:w-32 my-4 p-2 justify-self-end" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
