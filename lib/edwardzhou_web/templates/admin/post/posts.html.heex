@@ -1,39 +1,84 @@
-<table class="w-full whitespace-no-wrap">
-  <thead>
-    <tr
-        class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
-      <th class="px-4 py-3">Title</th>
-      <th class="px-4 py-3">Weight</th>
-      <th class="px-4 py-3">Status</th>
-      <th class="px-4 py-3">Tags</th>
-      <th class="px-4 py-3">Create Time</th>
-      <th class="py-3 pl-4">Action</th>
-    </tr>
-  </thead>
-  <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
-    <%= for post <- @posts do %>
-      <tr class="text-gray-700 dark:text-gray-400">
-        <td class="px-4 py-3">
-          <div class="flex items-center text-sm">
-            <div>
-              <p class="font-semibold"><%= post.title %></p>
-              <p class="text-xs text-gray-600 dark:text-gray-400"><%= post.views %> viewed</p>
-            </div>
-          </div>
-        </td>
-        <td class="px-4 py-3 text-sm"><%= post.weight %></td>
-        <td class="px-4 py-3 text-xs">
-          <span class={"px-2 py-1 font-semibold leading-tight rounded-full #{publish_status_class(post.publish_status)}"}>
-            <%= post.publish_status %>
-          </span>
-        </td>
-        <td class="px-4 py-3 text-sm">Book</td>
-        <td class="px-4 py-3 text-sm"><%= display_time(post.inserted_at) %></td>
-        <td class="py-3 pl-4">
-          <%= link "Edit", to: Routes.admin_post_path(@conn, :edit, post), class: "admin-button bg-green-600 hover:bg-green-800 md:w-20 my-4 p-2 justify-self-end" %>
-          <%= link "Delete", to: Routes.admin_post_path(@conn, :delete, post), class: "admin-button bg-red-600 hover:bg-red-800 md:w-32 my-4 p-2 justify-self-end" %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container px-6 mx-auto grid">
+  <%= link("Create Post", to: Routes.admin_post_path(@conn, :new), class: "admin-button md:w-32 w-full my-4 p-2 justify-self-end") %>
+  <div class="w-full overflow-hidden rounded-lg shadow-xs">
+    <div class="w-full overflow-x-auto">
+      <table class="w-full whitespace-no-wrap">
+        <thead>
+          <tr
+              class="text-xs font-semibold tracking-wide text-left text-gray-500 uppercase border-b dark:border-gray-700 bg-gray-50 dark:text-gray-400 dark:bg-gray-800">
+            <th class="px-4 py-3">Title</th>
+            <th class="px-4 py-3">Weight</th>
+            <th class="px-4 py-3">Status</th>
+            <th class="px-4 py-3">Tags</th>
+            <th class="px-4 py-3">Create Time</th>
+            <th class="py-3 pl-4">Action</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
+          <%= for post <- @posts do %>
+            <tr class="text-gray-700 dark:text-gray-400">
+              <td class="px-4 py-3">
+                <div class="flex items-center text-sm">
+                  <div>
+                    <p class="font-semibold"><%= post.title %></p>
+                    <p class="text-xs text-gray-600 dark:text-gray-400"><%= post.views %> viewed</p>
+                  </div>
+                </div>
+              </td>
+              <td class="px-4 py-3 text-sm"><%= post.weight %></td>
+              <td class="px-4 py-3 text-xs">
+                <span class={"px-2 py-1 font-semibold leading-tight rounded-full #{publish_status_class(post.publish_status)}"}>
+                  <%= post.publish_status %>
+                </span>
+              </td>
+              <td class="px-4 py-3 text-sm">Book</td>
+              <td class="px-4 py-3 text-sm"><%= display_time(post.inserted_at) %></td>
+              <td class="py-3 pl-4">
+                <%= link "Edit", to: Routes.admin_post_path(@conn, :edit, post), class: "admin-button bg-green-600 hover:bg-green-800 md:w-20 my-4 p-2 justify-self-end" %>
+                <%= link "Delete", to: Routes.admin_post_path(@conn, :delete, post), class: "admin-button bg-red-600 hover:bg-red-800 md:w-32 my-4 p-2 justify-self-end" %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div
+    class="px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t grid dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
+      <span class="flex items-center col-span-3">Showing 21-30 of <%= @total_entries %></span>
+      <span class="col-span-2"></span>
+      <!-- Pagination -->
+      <span class="flex mt-2 col-span-4 sm:mt-auto sm:justify-end">
+        <nav aria-label="Table navigation">
+          <ul class="inline-flex items-center">
+            <li>
+              <button class="px-3 py-1 rounded-l-lg rounded-md focus:outline-none focus:shadow-outline-purple" aria-label="Previous">
+                <svg aria-hidden="true" class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                  <path
+                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                                                                                                                                       clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+              </button>
+            </li>
+            <%= for idx <-  Enum.to_list(1..@total_pages) do %>
+              <li>
+                <button phx-click="nav" phx-value-page={idx} class={"px-3 py-1 rounded-md focus:outline-none focus:shadow-outline-purple #{@page_number == idx && "text-white bg-purple-600 border border-r-0 border-purple-600 transition-colors duration-150"}"}>
+                  <%= idx %>
+                </button>
+              </li>
+            <% end %>
+            <li>
+              <button class="px-3 py-1 rounded-r-lg rounded-md focus:outline-none focus:shadow-outline-purple"
+                                                                                                              aria-label="Next">
+                <svg class="w-4 h-4 fill-current" aria-hidden="true" viewBox="0 0 20 20">
+                  <path
+                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                                                                                                                                        clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </span>
+    </div>
+  </div>
+</div>

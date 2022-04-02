@@ -99,6 +99,8 @@
 <!-- Backdrop -->
 <div
   x-show="isSideMenuOpen"
+  x-data="{isSideMenuOpen: false}"
+  x-init="isSideMenuOpen=false"
   x-transition:enter="transition ease-in-out duration-150"
   x-transition:enter-start="opacity-0"
   x-transition:enter-end="opacity-100"

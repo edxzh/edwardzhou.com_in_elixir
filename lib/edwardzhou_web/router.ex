@@ -33,6 +33,7 @@ defmodule EdwardzhouWeb.Router do
     pipe_through [:browser, :admin_layout]
 
     get "/", DashboardController, :index
+    live "/posts", PostListLive
     resources "/posts", PostController
     resources "/tags", TagController
   end
